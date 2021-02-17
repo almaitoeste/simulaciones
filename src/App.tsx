@@ -1,58 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import '@progress/kendo-theme-default/dist/all.css';
+import { Menu, MenuItem } from '@progress/kendo-react-layout';
+import * as ReactDOM from 'react-dom';
+import { Simulaciones } from './features/simulaciones/Simulaciones';
+import { Simulacion } from './features/simulacion/Simulacion';
+import { Contrato } from './features/contrato/Contrato';
 import { Counter } from './features/counter/Counter';
+import MenuNavContainer from './features/common/MenuNavContainer.jsx';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+        <BrowserRouter >
+	            <Switch>
+	                <Route exact path="/" component={Simulaciones} />
+	                <Route exact path="/simulaciones" component={Simulaciones} />
+	                <Route exact path="/simulaciones/:id" component={Simulacion} />
+	                <Route exact path="/simulaciones/:simulacion_id/:id" component={Contrato} />
+	            </Switch>
+	        
+	    </BrowserRouter >
+        
     </div>
   );
+}
+const  onSelect = (event:any) => {
+    alert(event.item.data.route);
 }
 
 export default App;

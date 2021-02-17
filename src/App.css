@@ -37,3 +37,11 @@
     transform: translateY(0px)
   }
 }
+
+.k-animation-container-relative{
+  display: block;
+}
+
+body{
+  background-color: #fafafa;
+}
