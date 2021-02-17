@@ -5,7 +5,6 @@ import * as ReactDOM from 'react-dom';
 import { Simulaciones } from './features/simulaciones/Simulaciones';
 import { Simulacion } from './features/simulacion/Simulacion';
 import { Contrato } from './features/contrato/Contrato';
-import { Counter } from './features/counter/Counter';
 import MenuNavContainer from './features/common/MenuNavContainer.jsx';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
